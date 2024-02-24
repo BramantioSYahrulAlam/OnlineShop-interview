@@ -35,7 +35,7 @@ Backend:
 
 1. **Clone Repository:**
    ```bash
-   git clone https://github.com/username/nama-repository.git
+   [git clone https://github.com/username/nama-repository.git](https://github.com/BramantioSYahrulAlam/OnlineShop-interview.git)
    ```
 
 2. **Masuk ke Direktori:**
