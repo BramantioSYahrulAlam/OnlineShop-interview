@@ -51,7 +51,7 @@ Backend:
 4. **Setup Environment:**
    - Duplikat file `.env.example` menjadi `.env`
      atau bisa menjalankan perintah:
-     cp .env.example .env
+cp .env.example .env
      
    - Konfigurasi database didalam file .env
      Ubah DB_DATABASE menjadi : tokoonline
