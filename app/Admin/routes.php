@@ -15,6 +15,11 @@ Route::group([
 
     $router->resource('penggunas', PenggunaController::class);
 
+
+    // Route::get('/sesi', function () {
+    //     return redirect('/admin');
+    // });
+
     $router->resource('users', UserController::class);
     $router->resource('produks', ProdukController::class);
 

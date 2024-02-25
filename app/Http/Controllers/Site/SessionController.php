@@ -37,20 +37,20 @@ class SessionController extends Controller
         if(Auth::attempt($infologin)){
 
             if(Auth::user()->role == 'user'){
-                return redirect('home');
+                return redirect('/home');
             } elseif(Auth::user()->role == 'admin'){
-                return redirect('/admin');
+                return redirect('/login')->withErrors('Username dan Password yang anda masukkan salah');
             }
             return redirect('home')->with('Success','Berhasil Login');
         } else {
-            return 'gagal';
+            return redirect('/login')->with('Success','Berhasil Login');
         }
 
     }
 
     function logout(){
         Auth::logout();
-        return redirect('/')->with('success', 'Berhasil logout. Harap Login kembali jika ingin mengakses detail Produk');
+        return redirect('/login')->with('success', 'Berhasil logout. Harap Login kembali jika ingin mengakses detail Produk');
 
 
     }
@@ -66,7 +66,9 @@ class SessionController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=>'required|email|unique:users',
+            'nomor'=>'required|min:5',
             'password'=>'required|min:5'
+
 
         ], [
             'name.required'=>'nama wajib di isi',
@@ -78,15 +80,19 @@ class SessionController extends Controller
         ]);
 
         $data = [
-            'name' =>$request->name,
-            'email' =>$request->email,
-            'password' => Hash::make($request->password)
+            'name' => $request->name,
+            'email' => $request->email,
+            'nomor' => $request->nomor,
+            'password' => Hash::make($request->password),
+            'role' => 'user', // Set peran menjadi 'user'
         ];
         User::create($data);
 
         $infologin=[
             'email'=>$request->email,
+            'nomor'=>$request->nomor,
             'password'=>$request->password
+
         ];
 
         if(Auth::attempt($infologin)){

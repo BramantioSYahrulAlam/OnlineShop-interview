@@ -20,12 +20,52 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('global/login/Login_v1')}}/css/util.css">
 	<link rel="stylesheet" type="text/css" href="{{asset('global/login/Login_v1')}}/css/main.css">
 <!--===============================================================================================-->
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.alert-container {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ff7f7f;
+  border: 1px solid #ff4c4c;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+</style>
 </head>
 <body>
+
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
+                    @if($errors->any())
+                    <div class="alert-container" id="danger-alert">
+                        <span class="close-btn" onclick="closeAlert()">&times;</span>
+                        @foreach($errors->all() as $item)
+                        <h5>Error:{{$item}}</h5>
+                        @endforeach
+                    </div>
+                    @endif
                     <img src="{{ asset('global/login/Login_v1/images/img-01.png') }}" alt="IMG">
                 </div>
 
@@ -34,6 +74,7 @@
                     <span class="login100-form-title">
                         Member Login
                     </span>
+
 
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                         {{-- email --}}
@@ -75,9 +116,17 @@
                             Admin Panel
                             <i class="fa fa-long-arrow-right m-l-2" aria-hidden="true"></i>
                         </a>
+                        <p style="font-size: 14px; margin-top: 10px; color: #777;">ketika klik admin panel: jika sesudah memasukan username dan password admin diarahkan kembali ke halaman users login, klik kembali ke halaman login</p>
+                    </div>
+                    <br>
+                    <div class="text-center p-t-10">
+                        <a class="txt5" href="/home">
+                            Login Sebagai Tamu
+                            <i class="fa fa-long-arrow-right m-l-2" aria-hidden="true"></i>
+                        </a>
                     </div>
 
-                    <div class="text-center p-t-136">
+                    <div class="text-center p-t-10">
                         <a class="txt2" href="/sesi/register">
                             Create your Account
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
@@ -102,9 +151,17 @@
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
+
 	</script>
 <!--===============================================================================================-->
 	<script src="{{asset('global/login/Login_v1')}}/js/main.js"></script>
+
+    <script>
+        function closeAlert() {
+  var alertContainer = document.getElementById('danger-alert');
+  alertContainer.style.display = 'none';
+}
+    </script>
 
 </body>
 </html>

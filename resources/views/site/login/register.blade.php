@@ -20,10 +20,27 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('global/login/Login_v1')}}/css/util.css">
 	<link rel="stylesheet" type="text/css" href="{{asset('global/login/Login_v1')}}/css/main.css">
 <!--===============================================================================================-->
+<style>
+    .kembali{
+        width: 8vh;
+        position: absolute;
+        left: 390px;
+        bottom: 85vh;
+
+    }
+</style>
 </head>
 <body>
     <div class="limiter">
         <div class="container-login100">
+
+               <a href='/login'>
+                    <img class="kembali" src="{{asset('global/landingpage/images/kembali.png')}}" alt="">
+               </a>
+
+            <div>
+
+            </div>
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
                     <img src="{{ asset('global/login/Login_v1/images/img-01.png') }}" alt="IMG">
@@ -34,11 +51,11 @@
                     <span class="login100-form-title">
                         Register
                     </span>
-                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                        {{-- email --}}
-                        <label for="name">  </label>
-                        <input class="input100" type="text" name="name" placeholder="Email" value="{{ Session::get('name') }}" required>
 
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        {{-- name --}}
+                        <label for="name"></label>
+                        <input class="input100" type="text" name="name" placeholder="Name" value="{{ Session::get('name') }}" required>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -47,23 +64,43 @@
 
                     <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                         {{-- email --}}
-                        <label for="email">  </label>
+                        <label for="email"></label>
                         <input class="input100" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
-
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Nomor is required">
+                        {{-- nomor --}}
+                        <label for="nomor"></label>
+                        <input id="nomor" class="input100" type="text" name="nomor" placeholder="Nomor" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         {{-- password --}}
-                        <label for="password"> </label>
+                        <label for="password"></label>
                         <input id="password" class="input100" type="password" name="password" placeholder="Password" required>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Role is required">
+                        {{-- role --}}
+                        <label for="role"></label>
+                        <input id="role" class="input100" type="text" name="role" placeholder="Role" value="user" readonly required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </span>
+                        <p style="font-size: 14px; margin-top: 10px; color: #777;">ini hanya default user</p>
                     </div>
 
                     <div class="container-login100-form-btn">
@@ -72,14 +109,7 @@
                         </button>
                     </div>
 
-                    <div class="text-center p-t-12">
-                        <span class="txt1">
-                            Forgot
-                        </span>
-                        <a class="txt2" href="#">
-                            Username / Password?
-                        </a>
-                    </div>
+
 
                     <div class="text-center p-t-136">
                         <a class="txt2" href="#">
@@ -91,6 +121,7 @@
             </div>
         </div>
     </div>
+
 
 
 <!--===============================================================================================-->

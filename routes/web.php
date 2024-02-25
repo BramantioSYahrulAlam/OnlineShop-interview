@@ -15,8 +15,8 @@ use App\Http\Controllers\Site\AdminController;
 |
 */
 
-
-Route::get('/sesi', [SessionController::class, 'index'])->name('login');
+Route::get('/', 'App\Http\Controllers\Site\HomeController@getIndex')->name('site.home.getIndex');
+Route::get('/login', [SessionController::class, 'index'])->name('login');
 Route::post('/sesi/login', [SessionController::class, 'login']);
 Route::get('/sesi/register', [SessionController::class, 'register']);
 Route::post('/sesi/create', [SessionController::class, 'create']);
@@ -25,10 +25,13 @@ Route::get('/sesi/logout', [SessionController::class, 'logout'])->name('logout')
 
 Route::get('/kategori', 'App\Http\Controllers\Site\KategoriController@getIndex')->name('site.kategori.getIndex');
 
-Route::get('/home', function () {
-    return redirect('/');
+Route::get('/home', 'App\Http\Controllers\Site\HomeController@getIndex')->name('site.home.getIndex');
+
+Route::get('/sesi', function () {
+    return redirect('/login');
 });
-Route::get('/', 'App\Http\Controllers\Site\HomeController@getIndex')->name('site.home.getIndex');
+
+// Route::get('/', 'App\Http\Controllers\Site\HomeController@getIndex')->name('site.home.getIndex');
 
 // Route::post('/login', 'App\Http\Controllers\Site\LoginController@post')->name('site.login.post');
 
