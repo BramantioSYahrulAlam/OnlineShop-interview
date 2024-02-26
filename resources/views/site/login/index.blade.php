@@ -116,7 +116,7 @@
                             Admin Panel
                             <i class="fa fa-long-arrow-right m-l-2" aria-hidden="true"></i>
                         </a>
-                        <p style="font-size: 14px; margin-top: 10px; color: #777;">ketika klik admin panel: jika sesudah memasukan username dan password admin diarahkan kembali ke halaman users login, klik kembali ke halaman login</p>
+                        <p style="font-size: 14px; margin-top: 10px; color: #777;">ketika klik admin panel: jika sesudah memasukan username dan password admin diarahkan kembali ke halaman users login, maka klik kembali Halaman  Admin Panel</p>
                     </div>
                     <br>
                     <div class="text-center p-t-10">
