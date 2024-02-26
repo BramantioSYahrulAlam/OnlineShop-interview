@@ -86,3 +86,11 @@ lalu klik link url yang mengarah ke website
   ketika diarahkan maka masukan saja kembali username dan password, dan ketika sudah submit di arahkan ke rute yang tidak sesuai semisal ke home, klik logout dan klik ke login admin
 3.Jika terjadi masalah saat ekstraksi project pastikan PHP berada di versi 7.4 atau versi lebih baru
 
+### Daftar yang telah terdaftar sebagai User dan Admin (Issue)
+Akun User: user@gmail.com
+Password: user123
+
+Jika ingin menggunakan akunn lain maka harus register terlebih dahulu
+
+Akun Admin: admin
+password: admin
