@@ -1,5 +1,7 @@
 ### [Outfit Online Shop]
 
+![StrukturWeb](https://github.com/BramantioSYahrulAlam/OnlineShop-interview/assets/98206948/bbaa59ad-4357-416c-bc35-cbcc2925822f)
+
 **Deskripsi:**
 
 Aplikasi website ini adalah platform e-commerce yang khusus dirancang untuk penjualan pakaian dan aksesoris selain itu Website ini juga menyajikan berbagai fitur, mulai dari fitur register, admin Panel, hingga Manajemen Produk melalui Admin
